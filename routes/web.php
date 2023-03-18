@@ -30,6 +30,7 @@ Route::post("/club", [ClubController::class, "store"])->middleware("auth")->name
 Route::get("/match", [MatchController::class, "index"])->middleware("auth")->name("match");
 Route::post("/match", [MatchController::class, "store"])->middleware("auth")->name("store.match");
 Route::get("/classement", [ClassementController::class, "index"])->name("classement");
+Route::post("/clear", [ClassementController::class, "clear"])->middleware("auth")->name("clear");
 
 
 

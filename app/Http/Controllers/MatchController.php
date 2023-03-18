@@ -22,11 +22,10 @@ class MatchController extends Controller
             if ($value["nama_klub1"] == $value["nama_klub2"]) {
                 return redirect()->back()->withErrors(["error" => "tidak bisa masukan nama klub yang sama pada pertandingan yang sama"]);
             }
-            // $klub1 = Match_club::where("klub_id_1", $value["nama_klub1"])->first();
-            // $klub2 = Match_club::where("klub_id_2", $value["nama_klub2"])->first();
-            // if (isset($klub1) && isset($klub2)) {
-            //     return redirect()->back()->withErrors(["error" => "Data pertandingan sudah di masukkan"]);
-            // }
+            $exist = Match_club::where("klub_id_1", $value["nama_klub1"])->where("klub_id_2", $value["nama_klub2"])->first();
+            if ($exist) {
+                return redirect()->back()->withErrors(["error" => "data pertandingan tidak boleh sama"]);
+            }
             Match_club::create([
                 "klub_id_1" => $value["nama_klub1"],
                 "score_1" => $value["score1"],

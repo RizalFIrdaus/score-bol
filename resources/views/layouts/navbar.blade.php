@@ -60,10 +60,10 @@
             id="mobile-menu-language-select">
             <ul
                 class="flex flex-col p-4 mt-4 border bg-[#fee74c] border-gray-100 rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:bg-white">
-                {{-- <li>
-                    <a href="#"
+                <li>
+                    <a href="/"
                         class="block py-2 pl-3 pr-4  rounded hover:bg-slate-600 hover:text-white lg:hover:bg-transparent lg:hover:text-[#fee74c] lg:p-0 lg:text-md font-bold text-slate-600  ">Beranda</a>
-                </li> --}}
+                </li>
                 <li>
                     <a href="{{ route("classement") }}"
                         class="block py-2 pl-3 pr-4  rounded hover:bg-slate-600 hover:text-white lg:hover:bg-transparent lg:hover:text-[#fee74c] lg:p-0 lg:text-md font-bold text-slate-600  ">Klasemen</a>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
+use App\Models\Match_club;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $clubs = Club::all();
+        $matchs = Match_club::take(5)->get();
+        return view('index', compact("clubs", "matchs"));
     }
 
     /**
